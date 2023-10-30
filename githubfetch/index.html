@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub | Fetch</title>
+  </head>
+  <body>
+    <h1>Fetch Links</h1>
+    <ul id="linkList"></ul>
+    <script>
+      const url = "https://api.github.com/users/kamranahmedse";
+
+      const linkList = document.getElementById("linkList");
+
+      async function fetchAndDisplayLink() {
+        for (const link of url) {
+          try {
+            const response = await fetch(link);
+            const html = await response.text();
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<a href="${link}" target="_blank">${link}</a><br>${html}`;
+            linkList.appendChild(listItem);
+          } catch {
+            console.error("Fehler beim Fetchen von", link, error);
+          }
+        }
+      }
+
+      fetchAndDisplayLink();
+    </script>
+  </body>
+</html>

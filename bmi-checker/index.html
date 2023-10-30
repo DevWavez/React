@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>BMI-Checker</title>
+  </head>
+  <body>
+    <h1>BMI Checker</h1>
+    <div class="container">
+      <form id="bmiForm">
+        <label for="">Heigth:</label>
+        <input type="number" min="25" max="300" step="1" required /><br />
+        <label for="">Weight:</label>
+        <input type="number" min="40" max="600" step="1" required /><br />
+        <label for="">Gender:</label><br />
+        <select name="" id="genderSelect">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <button type="submit">Calculate BMI</button>
+      </form>
+    </div>
+  </body>
+</html>
